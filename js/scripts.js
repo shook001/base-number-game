@@ -1,4 +1,4 @@
-var timeLimit, timerStart;
+var timeLimit, timerStart, currentDot;
 var timer = document.getElementById('timer');
 var playingField = document.getElementById('playingField');
 const maxTimeLimit = 10;
@@ -7,12 +7,11 @@ const restartState = "Quit";
 const second_interval = 1000;
 const dotsPerLevel = 10;
 
-var currentDot = 1;
-
 function play(playButton){
     if(playButton.innerHTML === initialState){
         playButton.innerHTML = restartState;
         timeLimit = maxTimeLimit;
+        currentDot = 1;
         removeDots();
         addDots();
         timerStart = setInterval(time, second_interval);
